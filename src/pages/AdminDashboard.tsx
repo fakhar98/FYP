@@ -73,7 +73,7 @@ export default function AdminDashboard() {
           <BigStat label="Total Tickets" value={tickets.length} icon={<Ticket size={20} />} />
           <BigStat label="Pending" value={pending.length} icon={<Clock size={20} />} color="amber" />
           <BigStat label="Approved" value={approved.length} icon={<CheckCircle size={20} />} color="green" />
-          <BigStat label="Revenue" value={`$${totalRevenue.toFixed(0)}`} icon={<BarChart2 size={20} />} color="blue" />
+          <BigStat label="Revenue" value={`PKR${totalRevenue.toFixed(0)}`} icon={<BarChart2 size={20} />} color="blue" />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
@@ -148,7 +148,7 @@ export default function AdminDashboard() {
                 <img src={m.poster} alt={m.title} className="w-12 h-16 object-cover rounded" />
                 <div className="ml-2">
                   <p className="text-white font-semibold text-sm truncate" style={{maxWidth: 320}}>{m.title}</p>
-                  <p className="text-gray-400 text-xs">{m.genre} • ${m.price.toFixed(2)}</p>
+                  <p className="text-gray-400 text-xs">{m.genre} • PKR {m.price.toFixed(2)}</p>
                   {m.showtimes && <p className="text-gray-500 text-xs mt-1">Times: {m.showtimes.join(' • ')}</p>}
                 </div>
                 <div className="ml-auto flex items-center gap-2">
@@ -250,7 +250,7 @@ function MovieMetricRow({
           </div>
         </div>
         <div className="text-right flex-shrink-0">
-          <p className="text-white font-bold text-sm">${revenue.toFixed(0)}</p>
+          <p className="text-white font-bold text-sm">PKR ${revenue.toFixed(0)}</p>
           <p className="text-gray-600 text-xs">{total} total</p>
         </div>
       </div>
@@ -288,7 +288,7 @@ function PendingTicketRow({
           <p className="text-white font-semibold text-sm truncate">{movie?.title ?? 'Unknown'}</p>
           <p className="text-gray-400 text-xs truncate mt-0.5">{user?.name ?? 'Unknown'} &bull; {user?.email}</p>
           <p className="text-gray-500 text-xs mt-1">
-            {ticket.seats} seat{ticket.seats > 1 ? 's' : ''} &bull; ${ticket.totalPrice.toFixed(2)}{ticket.showtime ? <> &bull; {ticket.showtime}</> : ''} &bull;{' '}
+            {ticket.seats} seat{ticket.seats > 1 ? 's' : ''} &bull; PKR {ticket.totalPrice.toFixed(2)}{ticket.showtime ? <> &bull; {ticket.showtime}</> : ''} &bull;{' '}
             {new Date(ticket.bookedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
           </p>
         </div>
@@ -386,7 +386,7 @@ function AllTicketsLog({
                   <td className="px-4 py-3 text-white font-medium">{movieMap[t.movieId]?.title ?? '—'}</td>
                   <td className="px-4 py-3 text-gray-400">{userMap[t.userId]?.name ?? '—'}</td>
                   <td className="px-4 py-3 text-gray-400">{t.seats}</td>
-                  <td className="px-4 py-3 text-white">${t.totalPrice.toFixed(2)}</td>
+                  <td className="px-4 py-3 text-white">PKR {t.totalPrice.toFixed(2)}</td>
                   <td className="px-4 py-3 text-gray-400">{(t as any).showtime ?? '—'}</td>
                   <td className="px-4 py-3 text-gray-500 text-xs">
                     {new Date(t.bookedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
