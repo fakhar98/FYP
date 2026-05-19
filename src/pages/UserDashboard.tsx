@@ -35,7 +35,7 @@ export default function UserDashboard({ onNavigate }: UserDashboardProps) {
           <StatCard label="Total Bookings" value={myTickets.length} icon={<Ticket size={18} />} />
           <StatCard label="Pending" value={pending.length} icon={<Clock size={18} />} color="amber" />
           <StatCard label="Approved" value={approved.length} icon={<CheckCircle size={18} />} color="green" />
-          <StatCard label="Total Spent" value={`$${totalSpent.toFixed(2)}`} icon={<Film size={18} />} color="blue" />
+          <StatCard label="Total Spent" value={`PKR ${totalSpent.toFixed(2)}`} icon={<Film size={18} />} color="blue" />
         </div>
 
         {/* Pending Tickets */}
