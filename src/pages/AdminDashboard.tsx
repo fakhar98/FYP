@@ -250,7 +250,7 @@ function MovieMetricRow({
           </div>
         </div>
         <div className="text-right flex-shrink-0">
-          <p className="text-white font-bold text-sm">PKR ${revenue.toFixed(0)}</p>
+          <p className="text-white font-bold text-sm">PKR {revenue.toFixed(0)}</p>
           <p className="text-gray-600 text-xs">{total} total</p>
         </div>
       </div>
