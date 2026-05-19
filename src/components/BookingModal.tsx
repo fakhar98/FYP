@@ -146,7 +146,7 @@ export default function BookingModal({ movie, onClose, onSuccess }: BookingModal
           <div className="mb-4">
             <h3 className="text-white font-bold text-2xl leading-tight">{movie.title}</h3>
             <p className="text-amber-400 text-sm mt-1">{movie.genre}</p>
-            <p className="text-gray-500 text-xs mt-2">${movie.price.toFixed(2)} per seat</p>
+            <p className="text-gray-500 text-xs mt-2">PKR{movie.price.toFixed(2)} per seat</p>
           </div>
 
           <div className="mb-4">
