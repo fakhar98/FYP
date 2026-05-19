@@ -57,7 +57,7 @@ export default function MovieCard({ movie, onBook, isLoggedIn }: MovieCardProps)
         <div className="mt-auto pt-2 flex items-center justify-between border-t border-gray-800">
           <div>
             <p className="text-gray-500 text-xs">Price per seat</p>
-            <p className="text-white font-bold text-lg">PKR {movie.price.toFixed(2)}</p>
+            <p className="text-white font-bold text-lg">PKR{movie.price.toFixed(2)}</p>
           </div>
           <button
             onClick={() => onBook(movie)}
